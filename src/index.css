@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lexend:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-dmsans: "DM Sans", sans-serif;
+  --font-lato: "Lato", sans-serif;
+  --font-lexend: "Lexend", sans-serif;
+  --font-roboto-mono: "Roboto Mono", monospace;
+}
+body {
+  @apply bg-[#1A1A1A] text-white font-sans overflow-x-hidden;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.nav a p {
+  @apply cursor-pointer hover:text-white transition-colors duration-300;
+}
+
+.nav-link {
+  position: relative;
+  transition: transform 0.25s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 3px;
+  background: white;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.25s ease;
+}
+
+.nav-link:hover {
+  transform: translateY(-3px);
+}
+
+.nav-link:hover::after {
+  transform: scaleY(1);
+}
+
+.particles-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
